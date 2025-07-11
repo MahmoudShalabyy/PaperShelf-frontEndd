@@ -1,12 +1,5 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "angular.json",
-      "use": "@vercel/angular"
-    }
-  ],
-  "outputDirectory": "dist/paper_shelf/browser",
   "routes": [
     {
       "src": "/(.*)",
