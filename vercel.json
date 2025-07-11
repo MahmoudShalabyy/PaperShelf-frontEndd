@@ -1,9 +1,6 @@
 {
-  "cleanUrls": true,
+  "outputDirectory": "dist/paper_shelf",
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
-  ],
-  "redirects": [],
-  "headers": [],
-  "trailingSlash": false
+  ]
 }
