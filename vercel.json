@@ -1,11 +1,9 @@
 {
   "version": 2,
-  "public": "dist/browser",
-  "routes": [
+  "rewrites": [
     {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
-
