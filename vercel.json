@@ -6,6 +6,7 @@
       "use": "@vercel/angular"
     }
   ],
+  "outputDirectory": "dist/paper_shelf",
   "routes": [
     {
       "src": "/(.*)",
