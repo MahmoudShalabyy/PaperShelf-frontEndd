@@ -11,8 +11,8 @@
 
   <div class="form-group mb-4 text-start">
     <label for="name" class="form-label">Name</label>
-    <input autocomplete="off" type="text" id="name" name="name" formControlName="name"
-      placeholder="Your full name" class="form-control"
+    <input autocomplete="off" type="text" id="name" name="name" formControlName="name" placeholder="Your full name"
+      class="form-control"
       [ngClass]="{'is-invalid': registerForm.get('name')?.invalid && registerForm.get('name')?.touched}">
     <div *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched"
       class="invalid-feedback validation-message">
@@ -54,10 +54,10 @@
     <label for="role" class="form-label">Register as</label>
     <select id="role" formControlName="role" class="form-control"
       [ngClass]="{'is-invalid': registerForm.get('role')?.invalid && registerForm.get('role')?.touched}">
-      <option value="" disabled>Select role</option>
-      <option value="user">Customer</option>
-      <option value="author">Author</option>
+      <option value="user">user</option>
+      <option value="author">author</option>
     </select>
+    <small class="form-text text-muted">This role will also be used if you sign up with Google</small>
     <div *ngIf="registerForm.get('role')?.invalid && registerForm.get('role')?.touched"
       class="invalid-feedback validation-message">
       <div *ngIf="registerForm.get('role')?.errors?.['required']">Role is required.</div>
@@ -67,7 +67,13 @@
   <button type="submit" class="btn btn-primary w-100 fw-bold py-3 fs-5 login-btn"
     [disabled]="registerForm.invalid">Register</button>
 
-  <div class="form-links d-flex justify-content-center align-items-center flex-wrap gap-2 mt-4">
+  <div class="text-center my-3">
+    <span class="text-muted">Or sign up with</span>
+  </div>
+
+  <div id="googleRegisterBtn" class="d-flex justify-content-center mb-3"></div>
+
+  <div class="text-center">
     <a routerLink="/auth/login" class="link text-secondary text-decoration-none small">Already have an account?</a>
   </div>
 </form>
