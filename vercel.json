@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "public": "dist/browser",
+  "outputDirectory": "dist/browser",
   "rewrites": [
     {
       "source": "/(.*)",
