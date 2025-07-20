@@ -21,7 +21,6 @@ export class UserAdminService {
     if (verify !== null && verify !== undefined) url += `&isEmailVerified=${verify}`;
     if (active !== null && active !== undefined) url += `&isActive=${active}`;
   
-    console.log('[API Request URL]', url); 
     return this.http.get(url);
   }
   
@@ -32,7 +31,7 @@ export class UserAdminService {
 
   getUsersWithSearch(query: string, page: number = 1, limit: number = 10): Observable<any> {
     const url = `${this.apiUrl}/?q=${encodeURIComponent(query)}&page=${page}&limit=${limit}`;
-    console.log('[API Request URL]', url);
+   
     return this.http.get(url);
   }
 
@@ -62,10 +61,8 @@ export class UserAdminService {
     const payload = JSON.parse(atob(token.split('.')[1]));
     const id = payload.userId || payload._id || null;
 
-    console.log('✅ Extracted User ID from token:', id); // 🔍
     return id;
   } catch (err) {
-    console.error('❌ Failed to decode token', err);
     return null;
   }
 }
