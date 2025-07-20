@@ -113,7 +113,6 @@ constructor(
         this._getcart.refreshCart();
       },
       error: (err) => {
-        console.error('Error updating cart item:', err);
         this._getcart.refreshCart();
       }
     });
@@ -134,7 +133,6 @@ constructor(
         this._getcart.refreshCart();
       },
       error: (err) => {
-        console.error('Error deleting item:', err);
       }
     });
   }

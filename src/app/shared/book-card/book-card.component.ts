@@ -57,9 +57,8 @@ export class BookCardComponent {
           },
           error: (error) => {
             const message =
-              error?.error?.message || 'فشل في الإضافة إلى السلة.';
+              error?.error?.message || 'faild to updated in card.';
             this.showMessage(message, 'error');
-            console.error('فشل في الإضافة إلى السلة', error);
           },
         });
     });
@@ -70,7 +69,7 @@ export class BookCardComponent {
     this.messageColor = type;
     setTimeout(() => {
       this.message = '';
-    }, 4000); // تختفي بعد 4 ثواني
+    }, 4000); 
   }
 
   addToWishlist() {
@@ -85,10 +84,6 @@ export class BookCardComponent {
       },
     });
   }
-
-  // getStars(rating: number): number[] {
-  //   return Array(Math.round(rating)).fill(0);
-  // }
 
   getDiscountedPrice(price: number, discount: number): number {
     return price - (price * discount) / 100;

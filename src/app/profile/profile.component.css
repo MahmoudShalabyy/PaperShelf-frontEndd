@@ -15,8 +15,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
   width: 100%;
   max-width: 500px;
-  position: relative; /* ضروري علشان التوست يظهر داخله */
-}
+  position: relative; 
 
 .profile-title {
   text-align: center;
