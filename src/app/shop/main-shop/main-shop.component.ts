@@ -27,7 +27,7 @@ export class MainShopComponent {
   showSearch: boolean = false;
   isLoading = false;
   searchQuery: string = '';
-  wishlistUrl = `${environment.apiBaseUrl}/wishlist`;
+  wishlistUrl = `${environment.apiBase}/wishlist`;
 
   searchPage = 1;
   searchLoading = false;
@@ -92,7 +92,7 @@ export class MainShopComponent {
   if (!query.trim()) {
     this.books = [];
     this.pagination = null;
-    this.loadBooks(); // رجع للعرض العادي
+    this.loadBooks(); 
     return;
   }
 
