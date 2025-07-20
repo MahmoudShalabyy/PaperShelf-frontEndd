@@ -43,7 +43,6 @@ export class WishlistComponent implements OnInit {
         this.loading = false;
       },
       error: (error: any) => {
-        console.error('Error loading products:', error);
         this.error = 'Failed to load products. Please try again later.';
         this.loading = false;
       },
@@ -72,7 +71,6 @@ export class WishlistComponent implements OnInit {
       },
       error: (error) => {
         this.showToast(`Failed to add "${item.name}" to cart.`, 'error');
-        console.error('Add to cart failed:', error);
       },
     });
   }
@@ -98,7 +96,6 @@ export class WishlistComponent implements OnInit {
         },
         error: (err) => {
           this.showToast(`Failed to add "${item.name}"`, 'error');
-          console.error(`Failed to add "${item.name}" to cart:`, err);
         },
       });
     });
@@ -134,7 +131,6 @@ export class WishlistComponent implements OnInit {
         this.showToast(`"${item.name}" removed from wishlist.`, 'info');
       },
       error: (err) => {
-        console.error('Failed to delete from wishlist:', err);
         this.showToast('Failed to delete item.', 'error');
       },
     });

@@ -108,7 +108,6 @@ export class MainShopComponent {
         this.searchFinished = true;
       }
     },
-    error: err => console.error('Search failed:', err),
     complete: () => {
       this.searchLoading = false;
     }
@@ -128,7 +127,6 @@ onScrollSearch() {
         this.searchFinished = true;
       }
     },
-    error: err => console.error('Error loading more search results:', err),
     complete: () => {
       this.searchLoading = false;
     }
@@ -159,9 +157,6 @@ onScrollSearch() {
         this.books = res.data.books;
         this.pagination = res.data.pagination;
       },
-      error: err => {
-        console.error('Error loading books:', err);
-      },
       complete: () => {
         this.isLoading = false;
       }
@@ -179,10 +174,7 @@ onScrollSearch() {
     this.http.get(this.wishlistUrl).subscribe({  
       next: (res: any) => {
         this.wishlistIds = res.data.map((item: any) => item._id);
-      },
-      error: (err: any) => {
-        console.error('Failed to load wishlist', err);
-      },
+      }
     });
   }
 
