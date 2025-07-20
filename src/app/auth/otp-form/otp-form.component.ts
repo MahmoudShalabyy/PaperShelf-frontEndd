@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-otp-form',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, RouterLink],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './otp-form.component.html',
   styleUrl: './otp-form.component.css'
 })
@@ -45,7 +45,7 @@ export class OtpFormComponent {
 
       this.otpserv.resetPassword({ otp, newPassword: password }).subscribe({
         next: (response) => {
-          console.log('Password Change Successfully', response);
+          
           localStorage.setItem('accessToken', response.accessToken);
           localStorage.setItem('refreshToken', response.refreshToken);
           this.verfiyMessage = 'Password changed successfully. Redirecting to login page...';
