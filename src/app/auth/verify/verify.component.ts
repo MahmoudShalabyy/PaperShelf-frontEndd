@@ -53,7 +53,7 @@ export class VerifyComponent implements OnInit {
 
       this.authService.verifyEmail({ otp }).subscribe({
         next: (response) => {
-          console.log('✅ Email verified successfully!', response);
+          
           this.successMessage = 'Email verified successfully!';
 
           // Clear unverified user data if it exists
@@ -64,7 +64,7 @@ export class VerifyComponent implements OnInit {
           }, 2000);
         },
         error: (err: any) => {
-          console.error('❌ OTP verification failed:', err);
+          
           this.errorMessage = err.error?.message || 'OTP verification failed. Please try again.';
         }
       });

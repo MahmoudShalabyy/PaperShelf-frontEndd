@@ -2,7 +2,7 @@ import { Component, AfterViewInit, Inject, PLATFORM_ID, NgZone } from '@angular/
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
-import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { RoleService } from '../../services/role.service';
 import { CartService } from '../../services/cart.service';
 import { environment } from '../../../environments/environment';
@@ -15,8 +15,7 @@ declare const google: any;
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    RouterLink,
-    RouterLinkActive
+    RouterLink
   ],
   templateUrl: './register-form.component.html',
   styleUrls: ['./register-form.component.css']
@@ -44,7 +43,7 @@ export class RegisterFormComponent implements AfterViewInit {
         Validators.maxLength(30),
         Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,30}$/)
       ]],
-      role: ['user', Validators.required] // ✅ Default to 'user' role
+      role: ['user', Validators.required] 
     });
   }
 

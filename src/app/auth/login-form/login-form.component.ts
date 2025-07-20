@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { AuthService } from '../../services/auth.service';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { RoleService } from '../../services/role.service';
-import { CartService } from '../../services/cart.service'; // ← ضيف الاستيراد
+import { CartService } from '../../services/cart.service';
 import { environment } from '../../../environments/environment';
 
 declare const google: any;
