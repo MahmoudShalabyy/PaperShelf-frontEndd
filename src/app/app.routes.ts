@@ -69,7 +69,7 @@ export const routes: Routes = [
     component: DashboardComponent,
     canActivate: [DashboardGuard],
     children: [
-      { path: '', component: HomeDashboardComponent },
+      { path: '', component: ListUsersDashboardComponent },
       { path: 'users', component: ListUsersDashboardComponent },
       { path: 'users/edit/:id', component: EditUserComponent },
       { path: 'books', component: BooksDashboardComponent },
