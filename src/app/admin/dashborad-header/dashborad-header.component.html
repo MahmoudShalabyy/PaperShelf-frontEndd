@@ -3,93 +3,11 @@
             <div class="navbar-left">
                 <a href="#" class="sidebar-toggle">
                     <img class="svg" src="assets/admin/img/svg/bars.svg" alt="img"></a>
-                <a class="navbar-brand" routerLink="/dashboard"><img class="dark" src="assets/admin/img/logo_dark.png" alt="svg"><img class="light" src="assets/admin/img/logo_white.png" alt="img"></a>
+                <a class="navbar-brand" routerLink="/dashboard">Paper Shelf</a>
             </div>
 
             <div class="navbar-right">
                 <ul class="navbar-right__menu">
-                    <!-- <li class="nav-notification">
-                        <div class="dropdown-custom">
-                            <a href="javascript:;" class="nav-item-toggle">
-                                <span data-feather="bell"></span></a>
-                            <div class="dropdown-wrapper">
-                                <h2 class="dropdown-wrapper__title">Notifications <span class="badge-circle badge-warning ml-1">4</span></h2>
-                                <ul>
-                                    <li class="nav-notification__single nav-notification__single--unread d-flex flex-wrap">
-                                        <div class="nav-notification__type nav-notification__type--primary">
-                                            <span data-feather="inbox"></span>
-                                        </div>
-                                        <div class="nav-notification__details">
-                                            <p>
-                                                <a href="#" class="subject stretched-link text-truncate" style="max-width: 180px;">James</a>
-                                                <span>sent you a message</span>
-                                            </p>
-                                            <p>
-                                                <span class="time-posted">5 hours ago</span>
-                                            </p>
-                                        </div>
-                                    </li>
-                                    <li class="nav-notification__single nav-notification__single--unread d-flex flex-wrap">
-                                        <div class="nav-notification__type nav-notification__type--secondary">
-                                            <span data-feather="upload"></span>
-                                        </div>
-                                        <div class="nav-notification__details">
-                                            <p>
-                                                <a href="#" class="subject stretched-link text-truncate" style="max-width: 180px;">James</a>
-                                                <span>sent you a message</span>
-                                            </p>
-                                            <p>
-                                                <span class="time-posted">5 hours ago</span>
-                                            </p>
-                                        </div>
-                                    </li>
-                                    <li class="nav-notification__single nav-notification__single--unread d-flex flex-wrap">
-                                        <div class="nav-notification__type nav-notification__type--success">
-                                            <span data-feather="log-in"></span>
-                                        </div>
-                                        <div class="nav-notification__details">
-                                            <p>
-                                                <a href="#" class="subject stretched-link text-truncate" style="max-width: 180px;">James</a>
-                                                <span>sent you a message</span>
-                                            </p>
-                                            <p>
-                                                <span class="time-posted">5 hours ago</span>
-                                            </p>
-                                        </div>
-                                    </li>
-                                    <li class="nav-notification__single nav-notification__single d-flex flex-wrap">
-                                        <div class="nav-notification__type nav-notification__type--info">
-                                            <span data-feather="at-sign"></span>
-                                        </div>
-                                        <div class="nav-notification__details">
-                                            <p>
-                                                <a href="#" class="subject stretched-link text-truncate" style="max-width: 180px;">James</a>
-                                                <span>sent you a message</span>
-                                            </p>
-                                            <p>
-                                                <span class="time-posted">5 hours ago</span>
-                                            </p>
-                                        </div>
-                                    </li>
-                                    <li class="nav-notification__single nav-notification__single d-flex flex-wrap">
-                                        <div class="nav-notification__type nav-notification__type--danger">
-                                            <span data-feather="heart"></span>
-                                        </div>
-                                        <div class="nav-notification__details">
-                                            <p>
-                                                <a href="#" class="subject stretched-link text-truncate" style="max-width: 180px;">James</a>
-                                                <span>sent you a message</span>
-                                            </p>
-                                            <p>
-                                                <span class="time-posted">5 hours ago</span>
-                                            </p>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <a href="#" class="dropdown-wrapper__more">See all incoming activity</a>
-                            </div>
-                        </div>
-                    </li> -->
                     <li class="nav-author">
                         <div class="dropdown-custom">
                             <a href="javascript:;" class="nav-item-toggle"><img src="assets/admin/img/svg/defualt-profile.svg" alt="" class="rounded-circle"></a>
@@ -104,28 +22,7 @@
                                     </div>
                                 </div>
                                 <div class="nav-author__options">
-                                    <!-- <ul>
-                                        <li>
-                                            <a href="#">
-                                                <span data-feather="user"></span> Profile</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <span data-feather="settings"></span> Settings</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <span data-feather="key"></span> Billing</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <span data-feather="users"></span> Activity</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">
-                                                <span data-feather="bell"></span> Help</a>
-                                        </li>
-                                    </ul> -->
+                                    
                                     <a (click)="logout()" routerLink="/" class="nav-author__signout">
                                         <span data-feather="log-out"></span> Sign Out</a>
                                 </div>

@@ -45,7 +45,7 @@ export class PendingBookComponent implements OnInit{
   ) { }
 
   ngOnInit(): void {
-    console.log('BooksDashboardComponent initialized!');
+    
     this.loadBooks();
 
     this.searchControl.valueChanges.pipe(
@@ -172,7 +172,7 @@ export class PendingBookComponent implements OnInit{
 
     this.http.post(API_URL, formData).subscribe({
       next: (res) => {
-        console.log('Book created successfully.', res);
+        
         this.loadBooks();
         this.resetAddBookForm();
         this.imagePreviewUrl = null;
@@ -181,7 +181,7 @@ export class PendingBookComponent implements OnInit{
       },
       error: (err) => {
         this.showAlert('error', 'Something went wrong while adding book.');
-        console.log(err);
+        
       }
     });
   }

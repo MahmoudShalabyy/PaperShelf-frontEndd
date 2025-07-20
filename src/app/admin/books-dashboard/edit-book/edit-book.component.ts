@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../../environments/environment';
 import { Book } from '../../../interfaces/book';
-import { ActivatedRoute, Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 const API_URL = environment.apiBaseUrl + '/books';
@@ -12,7 +12,7 @@ const IMG_URL = environment.apiUrlForImgs;
 @Component({
   selector: 'app-edit-book',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './edit-book.component.html',
   styleUrls: ['./edit-book.component.css'],
 })
@@ -68,7 +68,6 @@ export class EditBookComponent implements OnInit {
     this.bookId = bookId;
     this.http.get<any>(`${API_URL}/${bookId}`).subscribe({
       next: (response) => {
-        console.log('[loadBookData] response:', response);
         const book = response.data.book;
         this.editBookForm.patchValue({
           title: book.title,
@@ -116,12 +115,7 @@ export class EditBookComponent implements OnInit {
       const file = fileInputElement.files[0];
       formData.append('coverImage', file);
     }
-  
-    console.log('Submitting formData:');
-    formData.forEach((value, key) => {
-      console.log(key, value);
-    });
-  
+
     this.http.put(`${API_URL}/${this.bookId}`, formData).subscribe({
       next: () => {
         this.showAlert('success', 'Book updated successfully!');
