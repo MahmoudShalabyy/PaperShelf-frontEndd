@@ -27,7 +27,7 @@ export class OrderHistoryComponent implements OnInit {
         this.loading = false;
       },
       error: (err) => {
-        console.error('Failed to load orders:', err);
+        
         this.loading = false;
       }
     });

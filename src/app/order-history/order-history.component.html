@@ -1,5 +1,5 @@
 <div class="order-history-wrapper">
-  <h2 class="section-title">🧾 Order History</h2>
+  <h2 class="section-title">Order History</h2>
 
   <div *ngIf="loading" class="loading-text">Loading your orders...</div>
 
@@ -19,7 +19,7 @@
 
       <div class="order-items">
         <div *ngFor="let item of order.items" class="order-item">
-          📚 {{ item.book.title }} × {{ item.quantity }}
+          {{ item.book.title }} × {{ item.quantity }}
         </div>
       </div>
     </div>
