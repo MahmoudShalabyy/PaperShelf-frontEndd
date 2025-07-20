@@ -114,16 +114,16 @@ h2 {
 }
 
 .payment-option .paypal-logo {
-    height: 20px;
-    vertical-align: middle;
-    margin-left: 10px;
+  height: 20px;
+  vertical-align: middle;
+  margin-left: 10px;
 }
 
 .payment-option a {
-    font-size: 12px;
-    color: var(--primary-color);
-    text-decoration: none;
-    margin-left: 5px;
+  font-size: 12px;
+  color: var(--primary-color);
+  text-decoration: none;
+  margin-left: 5px;
 }
 
 .place-order-btn {
@@ -161,31 +161,32 @@ h2 {
   justify-content: center;
   min-width: 280px;
   text-align: center;
-  background-color: #333; /* fallback */
+  background-color: #333;
+  /* fallback */
   transition: opacity 0.3s ease-in-out;
 }
 
 .toast-success {
-  background-color: #28a745; /* أخضر قوي */
+  background-color: #28a745;
 }
 
 .toast-error {
-  background-color: #dc3545; /* أحمر قوي */
-}
+  background-color: #dc3545;
 
-.custom-toast.fade-out {
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
-}
+  .custom-toast.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
 
 
-/* Responsive adjustments */
-@media (max-width: 992px) {
-  form {
-    flex-direction: column;
+  /* Responsive adjustments */
+  @media (max-width: 992px) {
+    form {
+      flex-direction: column;
+    }
+  }
+
+  .order-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.377);
   }
 }
-.order-item{
-    border-bottom: 1px solid rgba(0, 0, 0, 0.377);
-}
-

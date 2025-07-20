@@ -94,7 +94,7 @@ export class OrderComponent implements OnInit {
 
   onSubmit(): void {
     if (this.checkoutForm.invalid) {
-      console.error('Form is invalid');
+      
       this.checkoutForm.markAllAsTouched();
       return;
     }
@@ -103,12 +103,12 @@ export class OrderComponent implements OnInit {
 
     this.http.post(`${environment.apiBase}/checkout/process`, payload).subscribe({
       next: (response) => {
-        console.log('Order placed successfully!', response);
+        
         this._cartService.refreshCart();
         this.showToast('Order placed successfully!', 'success');
       },
       error: (error) => {
-        console.error('Error placing order:', error);
+        
         const serverError =
           error.error?.message || 'Failed to place order. Please try again.';
         this.showToast(serverError, 'error');
@@ -172,13 +172,13 @@ export class OrderComponent implements OnInit {
                                   this.showToast('Order placed successfully!', 'success');
                                 },
                                 error: (err) => {
-                                  console.error('Order failed after PayPal payment', err);
+                                  
                                   this.showToast('Error processing order', 'error');
                                 },
                               });
                           },
                           error: (err) => {
-                            console.error('PayPal capture error:', err);
+                            
                             this.showToast('PayPal payment capture failed', 'error');
                           },
                         });
@@ -188,19 +188,19 @@ export class OrderComponent implements OnInit {
                     },
                     onError: (err: any) => {
                       this.showToast('Payment error occurred', 'error');
-                      console.error(err);
+                      
                     },
                   })
                   .render('.paypal-btn-container');
               },
               error: (err) => {
-                console.error('Error creating PayPal order:', err);
+                
                 alert('Error initiating PayPal payment');
               },
             });
         },
         error: (err) => {
-          console.error('Error creating order before PayPal:', err);
+          
           this.showToast('Please check your shipping info before proceeding to PayPal.', 'error');
         },
       });
