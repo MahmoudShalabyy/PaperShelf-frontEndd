@@ -44,12 +44,10 @@ export class HomeComponent implements OnInit {
     if (res.success && Array.isArray(res.data)) {
       this.categories = res.data;
     } else {
-      console.warn('الاستجابة غير متوقعة:', res);
       this.categories = [];
     }
   },
   error: (err) => {
-    console.error('فشل تحميل الفئات:', err);
     this.categories = [];
   }
 });

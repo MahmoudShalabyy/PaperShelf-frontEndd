@@ -77,7 +77,6 @@ export class ProductDetailsComponent implements OnInit {
         this.isInWishlist = wishlist.some((item: any) => item._id === productId);
       },
       error: (err) => {
-        console.error('Failed to fetch wishlist', err);
         this.isInWishlist = false;
       },
     });
@@ -106,7 +105,6 @@ export class ProductDetailsComponent implements OnInit {
         this.startStreaming();
       },
       error: (err) => {
-        console.error(' Failed to load AI summary:', err);
         this.aiSummary = '📘 AI Summary not available for this book.';
       },
     });
@@ -153,7 +151,6 @@ export class ProductDetailsComponent implements OnInit {
           error.error?.message || 'Failed to add to cart.',
           'danger'
         );
-        console.error('Failed to add to cart', error);
       },
     });
   }
