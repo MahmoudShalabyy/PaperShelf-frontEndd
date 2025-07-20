@@ -33,7 +33,7 @@ export class EditUserComponent implements OnInit {
 
   ngOnInit(): void {
     this.userId = this.route.snapshot.paramMap.get('id')!;
-    console.log('[EditUserComponent] Loaded with userId:', this.userId);
+    
 
     this.userAdminService.getUserById(this.userId).subscribe({
       next: (res) => {
@@ -60,14 +60,14 @@ export class EditUserComponent implements OnInit {
   onSubmit() {
     if (this.userForm.invalid) return;
 
-    console.log('[Submit] Form value:', this.userForm.value);
+    
 
     const payload = { ...this.userForm.value };
     delete payload.email;
 
     this.userAdminService.updateUser(this.userId, payload).subscribe({
       next: (res: any) => {
-        console.log('[API Response] User updated successfully:', res);
+        
         const updatedUser = res.user;
         this.userForm.patchValue({
           name: updatedUser.name,
@@ -93,14 +93,14 @@ export class EditUserComponent implements OnInit {
   // onSubmit() {
   //   if (this.userForm.invalid) return;
 
-  //   console.log('[Submit] Form value:', this.userForm.value);
+  //   
 
   //   const payload = { ...this.userForm.value };
   //   delete payload.email; // ⛔️ remove email before sending to backend
 
   //   this.userAdminService.updateUser(this.userId, payload).subscribe({
   //     next: (res: any) => {
-  //       console.log('[API Response] User updated successfully:', res);
+  //       
   //       const updatedUser = res.user;
   //       this.userForm.patchValue({
   //         name: updatedUser.name,

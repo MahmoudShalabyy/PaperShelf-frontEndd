@@ -50,7 +50,7 @@ export class ApprovedComponent implements OnInit {
 
     this.reviewService.getApprovedReviews(page, limit).subscribe({
       next: (res) => {
-        console.log('API response:', res);
+        
         if (res.success) {
           this.reviews = res.data;
           this.pagination = res.pagination;
@@ -137,7 +137,7 @@ export class ApprovedComponent implements OnInit {
   }
 
   setPending(review: Review): void {
-    console.log(review.bookId, review.reviewId);
+    
     this.reviewService.setReviewPending(review.bookId, review.reviewId).subscribe({
       next: (res) => {
         if (res.success) {
@@ -152,7 +152,7 @@ export class ApprovedComponent implements OnInit {
   }
   
   onPrepareDelete(review: Review): void {
-    console.log(review.bookId, review.reviewId);
+    
     this.selectedReview = review;
   }
   

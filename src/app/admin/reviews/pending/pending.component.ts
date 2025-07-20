@@ -49,7 +49,7 @@ export class PendingComponent implements OnInit {
 
     this.reviewService.getPendingReviews(page, limit).subscribe({
       next: (res) => {
-        console.log('API response:', res);
+        
         if (res.success) {
           this.reviews = res.data;
           this.pagination = res.pagination;

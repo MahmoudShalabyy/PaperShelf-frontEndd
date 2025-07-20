@@ -35,7 +35,7 @@ export class ListUsersDashboardComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log('[ngOnInit] UsersDashboard initialized');
+    
     this.loadUsers();
 
     this.searchControl.valueChanges.pipe(
@@ -62,7 +62,7 @@ export class ListUsersDashboardComponent implements OnInit {
       page,
       limit).subscribe({
         next: (res) => {
-          console.log('[API] Loaded users:', res);
+          
           this.users = res.data?.users ?? res.users;
           this.pagination = res.data?.pagination ?? res.pagination;
         },
@@ -110,7 +110,7 @@ export class ListUsersDashboardComponent implements OnInit {
     const verify = this.verifyFilterControl.value;
     const active = this.activeFilterControl.value;
   
-    console.log('[Search Params]', { searchQuery, role, verify, active });
+    
   
     this.isLoading = true;
   
