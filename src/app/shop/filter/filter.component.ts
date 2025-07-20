@@ -52,7 +52,10 @@ export class FilterComponent {
   loadFilters() {
     this.http.get<any>(`${API_URL}/categories`).subscribe(res => {
       if (res.success && res.data?.categories) {
-        this.categories = res.data.categories.map((c: any) => c.name);
+        this.categories = res.data.categories
+  .map((c: any) => c.name)
+  .filter((name: string) => !!name && name.trim().length > 0)
+  .sort((a: string, b: string) => a.localeCompare(b));
       }
     });
 
