@@ -62,7 +62,7 @@ export class FilterComponent {
     this.http.get<any>(`${APIAuthors_URL}/authors`).subscribe(res => {
       if (res.success && res.data?.authors) {
         this.authors = res.data.authors.map((a: any) => a.name);
-        console.log('Authors loaded:', this.authors);
+        
       }
     });
   }
