@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Book, BookPagination } from '../interfaces/book';
 import { environment } from '../../environments/environment';
 import { map } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 const API_URL = `${environment.apiBaseUrl}/books`;
 const IMG_URL = `${environment.apiUrlForImgs}`;
@@ -88,18 +89,22 @@ export class BookService {
   }
 
   searchBooks(query: string, page: number = 1, limit: number = 20): Observable<{ data: { books: Book[], pagination: any } }> {
-    const params = new HttpParams()
-      .set('q', query)
-      .set('page', page.toString())
-      .set('limit', limit.toString());
-
-    return this.http.get<any>(`${this.apiUrl}/search`, { params }).pipe(
-      map(res => {
-        const mappedBooks: Book[] = res.data.books.map((book: any) => this.mapBook(book));
-        return { data: { books: mappedBooks, pagination: res.data.pagination } };
-      })
-    );
+  if (!query.trim()) {
+    return of({ data: { books: [], pagination: null } });
   }
+
+  const params = new HttpParams()
+    .set('q', query)
+    .set('page', page.toString())
+    .set('limit', limit.toString());
+
+  return this.http.get<any>(`${this.apiUrl}/search`, { params }).pipe(
+    map(res => {
+      const mappedBooks: Book[] = res.data.books.map((book: any) => this.mapBook(book));
+      return { data: { books: mappedBooks, pagination: res.data.pagination } };
+    })
+  );
+}
 
   createBook(formData: FormData): Observable<any> {
     return this.http.post(`${this.apiUrl}`, formData);
