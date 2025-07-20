@@ -83,7 +83,6 @@ confirmDelete(confirm: boolean) {
       this.pendingDeleteId = null;
     },
     error: (err) => {
-      console.error(err);
       this.showToast(' Failed to delete the book.', 'error');
       this.pendingDeleteId = null;
     }
