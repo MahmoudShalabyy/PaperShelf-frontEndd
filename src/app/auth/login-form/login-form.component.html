@@ -23,22 +23,15 @@
     <div class="mb-3 text-start">
         <label for="password" class="form-label">Password</label>
         <div class="input-group">
-            <input
-                autocomplete="off"
-                [type]="showPassword ? 'text' : 'password'"  
-                id="password"
-                name="password"
-                formControlName="password"
-                class="form-control"
+            <input autocomplete="off" [type]="showPassword ? 'text' : 'password'" id="password" name="password"
+                formControlName="password" class="form-control"
                 [class.is-invalid]="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
-                placeholder="Enter your secret password"
-            />
+                placeholder="Enter your secret password" />
             <span class="input-group-text" (click)="togglePasswordVisibility()" style="cursor: pointer;">
-                <i class="fas" [ngClass]="showPassword ? 'fa-eye-slash' : 'fa-eye'"></i>  
+                <i class="fas" [ngClass]="showPassword ? 'fa-eye-slash' : 'fa-eye'"></i>
             </span>
-            </div>
-    
-           <a href=""><img src="../../../assets/imgs/google.png" class="googleicon" alt=""></a> 
+        </div>
+
         <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
             class="validation-message">
             <div *ngIf="loginForm.get('password')?.errors?.['required']">Password is required.</div>
@@ -48,6 +41,12 @@
     </div>
 
     <button type="submit" class="btn login-btn w-100" [disabled]="loginForm.invalid">Login</button>
+
+    <div class="text-center my-3">
+        <span class="text-muted">Or sign in with</span>
+    </div>
+
+    <div id="googleBtn" class="d-flex justify-content-center"></div>
 
     <div class="form-links">
         <a routerLink="/auth/forgot" class="link">?Forgot Password</a>
