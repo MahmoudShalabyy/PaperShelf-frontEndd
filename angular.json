@@ -53,7 +53,19 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "optimization": {
+                "scripts": true,
+                "styles": true,
+                "fonts": true
+              },
+              "buildOptimizer": true,
+              "sourceMap": false,
+              "terserOptions": {
+                "compress": {
+                  "drop_console": true
+                }
+              }
             },
             "development": {
               "optimization": false,
